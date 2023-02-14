@@ -10,6 +10,9 @@ class TmpFile
 
     public function write() {
         $tmp = tmpfile();
+        
+        echo 'путь до временного файла - ' . stream_get_meta_data($tmp)['uri'];
+        
         fwrite($tmp, 'test');
 
         return $tmp;
